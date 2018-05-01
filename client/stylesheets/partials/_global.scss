@@ -1,0 +1,77 @@
+body,
+html {
+  font-size: 15px;
+  background: white;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  color: $text;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  min-height: 80vh;
+  position: relative;
+  z-index: 14;
+  background: white;
+
+  .single {
+    padding-bottom: 110px;
+  }
+}
+
+.tutors {
+  .container {
+    position: static;
+    min-height: 70vh;
+  }
+
+  .header--inner {
+    max-width: 100%;
+  }
+}
+
+.tutor-invites {
+  max-width: 900px;
+  margin: 160px auto;
+  padding: 20px;
+}
+
+
+//// Margin Helpers
+
+.m-r-20 {
+  margin-right: 20px;
+}
+
+.m-l-5 {
+  margin-left: 5px;
+}
+
+//// Font Helpers
+.text-upper {
+  text-transform: uppercase;
+}
+
+.object-fit_fill {
+  object-fit: fill;
+}
+
+.object-fit_contain {
+  object-fit: contain;
+}
+
+.object-fit_cover {
+  object-fit: cover;
+}
+
+.object-fit_none {
+  object-fit: none;
+}
+
+.object-fit_scale-down {
+  object-fit: scale-down;
+}

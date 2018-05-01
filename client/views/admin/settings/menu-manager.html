@@ -1,0 +1,42 @@
+<template name="menuManager">
+
+  <div class="row">
+    <div class="col-4">
+      <h3>Existing Pages</h3>
+      <div class="page-manager">
+        {{#if hasPages}}
+          <ul class="movable-list" id="sortable-pages">
+            {{#each pages}}
+              <li data-slug="{{slug}}" data-title="{{title}}">{{title}}</li>
+            {{/each}}
+          </ul>
+        {{/if}}
+      </div>
+      <h3>Custom Page</h3>
+      <div class="page-manager" style="height: auto;">
+        <form id="addMenu">
+          <label>Link Title
+            <input type="text" name="title" placeholder="Page Title">
+          </label>
+          <label>Link URL
+            <input type="text" name="url" placeholder="Page URL">
+          </label>
+          <button type="submit" class="btn add-menu-custom" value=""><i class="fa fa-plus"></i>Add Link</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-8">
+      <h3>Menu Manager</h3>
+      <p>You can either add existing pages that are created with the CMS or you can add custom links to pages that may existing externally or more abstract than the general page directives.</p>
+      <ul id="menu-list" class="menu-list">
+      </ul>
+      <div class="form-group">
+        <input type="submit" class="btn save-menu" value="Save Menu">
+      </div>
+    </div>
+  </div>
+
+
+
+
+</template>

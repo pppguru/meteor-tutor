@@ -1,0 +1,99 @@
+section {
+  &.admin-post-filters-wrapper {
+    background-color: #fff;
+    padding: 20px 0;
+
+    div.content-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+
+      > div {
+        display: flex;
+        flex-direction: row;
+
+        &.admin-filters-container {
+          align-items: center;
+          height: 55px;
+          padding: 25px 0;
+
+          > div {
+            &.admin-filters-dropdown-container {
+              height: 25px;
+
+              div {
+                &.dropdown-toggler-container {
+                  font-weight: 700;
+                  flex-direction: column;
+                  padding: 2px 0 0;
+
+                  ul {
+                    list-style: none;
+                    outline: none;
+                    margin: 0 10px;
+                    padding: 0;
+                    position: relative;
+
+                    &:nth-of-type(1) {
+                      padding: 0 15px 0 0;
+                      margin: 0 3px;
+
+                      &::after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        border-left: 5px solid transparent;
+                        border-right: 5px solid transparent;
+                        border-top: 5px solid $red;
+                        top: 10px;
+                        right: 0;
+                      }
+                    }
+
+                    li {
+                      color: $red;
+                      font-weight: 700;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &.admin-container-filters {
+          flex: 1;
+          align-items: center;
+        }
+
+        &#create-contest-container {
+          flex: 1;
+          flex-direction: row-reverse;
+
+          button {
+            height: 35px;
+            border-radius: 100px;
+            border: none;
+            line-height: 0;
+            background-color: $red;
+            color: #fff;
+
+            &:hover {
+              background-color: #fff;
+              color: $red;
+            }
+
+            span {
+              padding: 0;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

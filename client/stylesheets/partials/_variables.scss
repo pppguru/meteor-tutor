@@ -1,0 +1,35 @@
+// breakpoints
+
+$break-tiny: 320px;
+$break-414: 414px;
+$break-mobile: 420px;
+$break-small: 600px;
+$break-700: 700px;
+$break-medium: 768px;
+$break-large: 1024px;
+$break-xl: 1280px;
+$break-gigantic: 1600px;
+$footer-med-break: $break-medium + 107px;
+$phone-header-break: 660px;
+
+$width: 1024px;
+
+$max-width: 1000px;
+
+$litest-grey: #f3f3f3;
+$dark-grey: #2b2c30;
+$lite-grey: #68696f;
+$grey: #666;
+$yellow: #f8eb76;
+$green: #09b166;
+$blue: #89c0ca;
+$red: #f37073;
+
+$text: $grey;
+$footer: $dark-grey;
+$footerText: $lite-grey;
+$brand-color: $red;
+$border: #d9d9d9;
+$lite-red: #50393d;
+
+$error: rgb(226, 55, 17);

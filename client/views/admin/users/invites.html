@@ -1,0 +1,18 @@
+<template name="invites">
+  <section class="content tutor-invites">
+    <div class="nav-container">
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active js-tab"><a href="" role="tab" data-toggle="open-invitations">Open</a></li>
+        <li role="presentation" class="js-tab"><a href="" role="tab" data-toggle="closed-invitations">Approved Tutors</a></li>
+      </ul>
+    </div>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="open-invitations">
+        {{>openInvitations}}
+      </div>
+      <div role="tabpanel" class="tab-pane" id="closed-invitations">
+        {{>closedInvitations}}
+      </div>
+    </div>
+  </section>
+</template>

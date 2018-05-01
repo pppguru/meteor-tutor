@@ -1,0 +1,22 @@
+{
+  "name": "Tutor App",
+  "version": "0.8.0",
+  "homepage": "https://github.com/hot-summers/TutorApp",
+  "authors": [
+    "Kevin Green <kevin@districtdomain.com>"
+  ],
+  "description": "Tutoring Application",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "4.2.1",
+    "neat": "1.4.0",
+    "bitters": "1.0.0"
+  }
+}

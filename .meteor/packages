@@ -1,0 +1,105 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+## Meteor Defaults ##
+meteor-base@1.0.4               # Packages every Meteor app needs to have.
+mobile-experience@1.0.4         # Packages for a great mobile UX.
+mongo@1.1.14                  # The database Meteor supports right now.
+session@1.1.7                   # Client-side reactive dictionary for your app.
+tracker@1.1.1                   # Meteor's client-side reactive programming library.
+http@1.2.10                    # Make HTTP calls to remote servers
+logging@1.1.16                # Logging facility.
+
+## Compiling Tools ##
+es5-shim@4.6.15               # ECMAScript 5 compatibility for older browsers.
+ecmascript@0.6.1              # Enable ECMAScript2015+ syntax in app code
+francocatena:compass            # Stylesheet Authoring Environment that makes your website design simpler
+standard-minifier-css@1.3.2   # A minifier plugin used for Meteor apps by default.
+standard-minifier-js@1.2.1    # JS minifier uses UglifyJS2.
+fourseven:scss@3.8.1            # Sass build plugin for Meteor.
+mquandalle:bower                # Use Bower packages in your Meteor app
+meteorhacks:npm                 # Use npm modules with your Meteor App
+
+
+## User Packages ##
+accounts-base@1.2.14            # Meteor's user account system.
+accounts-password@1.3.3         # A login service that enables secure password-based login.
+alanning:roles                  # Authorization package
+
+## Routing ##
+iron:router                     # A router that works on the server and the browser.
+manuelschoebel:ms-seo           # Easily config SEO for your routes
+reywood:iron-router-ga          # Google analytics (universal edition) with some Iron Router sugar for tracking page views.
+okgrow:router-autoscroll        # Smart management of scroll position across route changes for Iron and Flow Router
+
+## Templating and UI/UX Tools ##
+alethes:pages                   # State of the art, out of the box Meteor pagination
+blaze-html-templates@1.0.4      # Compile HTML templates into reactive UI with Meteor Blaze
+cmather:handlebars-server       # Allows handlebars templates to be defined on the server in .handlebars files
+gadicohen:phantomjs             # PhantomJS is a headless WebKit scriptable with a JavaScript API.
+matteodem:easy-search           # Adds search functionality.
+simple:reactive-method          # Call methods synchronously inside Tracker.autorun
+sjors:meteor-masonry            # Cascading grid layout library
+themeteorchef:bert              # A client side, multi-style alerts system for Meteor.
+meteoric:ionicons-sass          # Ionic's Ionicons library in SASS and bundled for Meteor.
+
+## Email ##
+email@1.1.18                  # Send email messages
+wylio:mandrill                  # Send templated email and more via Mandrill
+
+## Other ##
+aldeed:geocoder                 # A Meteor package that provides the geocoding features of the node-geocoder package with a simple API.
+jquery@1.11.10                   # Manipulate the DOM using CSS selectors
+mdg:geolocation                 # Provides reactive geolocation on desktop and mobile.
+meteorhacks:search-source       # Reactive Data Source for Search
+mizzao:user-status              # User connection and idle state tracking for Meteor
+mrt:moment                      # Moment.js: parse, validate, manipulate, and display dates
+msavin:mongol                   # In-App MongoDB Editor.
+natestrauser:font-awesome       # Latest version Font-Awesome loaded via CDN.
+pcel:messenger                  # Display Notifications
+reactive-var@1.0.11             # Reactive variable
+reload@1.1.11                   # Reload the page while preserving application state.
+random@1.0.10                   # Random number generator and utilities
+shell-server@0.2.1                    # Server-side component of the `meteor shell` command.
+spacebars@1.0.12                # Handlebars-like template language for Meteor
+spiderable@1.0.14-release-testing.0               # Makes the application crawlable to web spiders
+themeteorchef:jquery-validation # jQuery Validation by jzaefferer, repackaged for Meteor.
+tmeasday:presence               # A package to help track users' presence
+underscore@1.0.10                # Underscore.js
+
+## Performance Tools ##
+u2622:persistent-session        # Persistently store Session data on the client
+meteorhacks:fast-render         # Render your app before the DDP connection even comes alive.
+meteorhacks:kadira              # Performance Monitoring for Meteor
+
+## Job Tools ##
+percolate:synced-cron           # Allows you to define and run scheduled jobs across multiple servers.
+
+## Files ##
+lepozepo:s3                     # Upload files to S3. Allows use of Knox Server-Side.
+mrt:jquery-imagesloaded         # Detect when images have been loaded.
+edgee:slingshot                 # Directly post files to cloud storage services, such as AWS-S3.
+
+## API Libraries ###
+dburles:google-maps             # Google Maps Javascript API v3
+mrgalaxy:stripe                 # Stripe.js and Node-Stripe brought to Meteor.
+
+## Data ##
+#audit-argument-checks@1.0.7     # [DEPRECATED] Try to detect inadequate input sanitization
+acemtp:algolia                  # Package to handle the blazing fast Algolia search engine
+check@1.2.4                     # Check whether a value matches a pattern
+ejson@1.0.13                    # Extended and Extensible JSON library
+meteorhacks:aggregate           # Proper MongoDB aggregations support for Meteor
+matb33:collection-hooks         # Extends Mongo.Collection with before/after hooks for insert, update, remove, find, and findOne.
+
+patrickml:singularity           # Object Document Mapper (ODM) for MeteorJS
+tmeasday:publish-counts         # Publish the count of a cursor, in real time
+patrickml:event-horizon         # flux the meteor way
+
+## React.js ##
+react                           # Everything you need to use React with Meteor.
+react-meteor-data               # React mixin for reactively tracking Meteor data
+react-template-helper           # Use React components in native Meteor templates

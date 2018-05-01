@@ -1,0 +1,159 @@
+
+
+body, html, input, a, button, li, ul, p, em {
+  @include open;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3, h4 {
+	@include open;
+  color: black;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 1.9rem;
+}
+
+// Nasty React -> span related stuff...
+
+h2 {
+	font-size: 1.9rem !important;
+  line-height: 1.2;
+  margin: 10px 0;
+  span {
+    font-size: 1.9rem !important;
+  }
+  @include respond-at-and-above($break-medium) {
+    font-size: 2.4rem !important;
+    span {
+      font-size: 2.4rem !important;
+    }
+  }
+}
+
+label {
+  font-weight: 700;
+}
+
+h3 {
+	font-size: 1.4rem;
+  @include respond-at-and-above($break-medium) {
+    font-size: 2rem;
+  }
+}
+
+h4 {
+	font-size: .9rem;
+}
+
+p {
+	font-size: 1.2rem;
+  &.lite {
+    opacity: .6;
+    font-size: 1.1rem;
+  }
+}
+
+a {
+  @include transition(all .25s);
+	text-decoration: none;
+	color: $red;
+  font-weight: 700;
+  &:hover {
+    color: black;
+  }
+}
+
+ul {
+
+	&.bullet-list {
+		list-style-type: initial;
+		margin-left: 20px;
+	}
+}
+
+
+@font-face {
+    font-family: 'si';
+    src: url('https://s3.amazonaws.com/tutorthepeople/content/fonts/socicon.eot');
+    src: url('https://s3.amazonaws.com/tutorthepeople/content/fonts/socicon.eot?#iefix') format('embedded-opentype'),
+         url('https://s3.amazonaws.com/tutorthepeople/content/fonts/socicon.woff') format('woff'),
+         url('https://s3.amazonaws.com/tutorthepeople/content/fonts/socicon.ttf') format('truetype'),
+         url('https://s3.amazonaws.com/tutorthepeople/content/fonts/socicon.svg#icomoonregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family:si;
+        src: url(https://s3.amazonaws.com/tutorthepeople/content/fonts/socicon.svg) format(svg);
+    }
+}
+
+.soc {
+    overflow:hidden;
+    margin:0; padding:0;
+    list-style:none;
+}
+
+.soc li {
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+}
+
+.soc li a {
+    font-family:si!important;
+    font-style:normal;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    box-sizing:border-box;
+    overflow:hidden;
+    text-decoration:none;
+    text-align:center;
+    display:block;
+    position: relative;
+    z-index: 1;
+    width: 51px;
+    height: 51px;
+    line-height: 51px;
+    font-size: 18px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    margin-right: 13px;
+    color: #ffffff;
+    background-color: none;
+    border: 1px solid $lite-red;
+}
+
+.soc-icon-last{
+    margin:0 !important;
+}
+
+
+.soc-twitter:before {
+    content:'a';
+}
+.soc-facebook:before {
+    content:'b';
+}
+.soc-google:before {
+    content:'c';
+}
+.soc-instagram:before {
+    content:'x';
+}
+.soc-linkedin:before {
+    content:'j';
+}

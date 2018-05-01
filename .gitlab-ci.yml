@@ -1,0 +1,117 @@
+image: kkarczmarczyk/node-yarn
+
+stages:
+  - test
+  - review
+  - deploy
+
+cache:
+  untracked: true
+  paths:
+    - ~/.meteor
+    - ~/.cache/yarn
+    - ~/.yarn
+    - ~/_opt
+    - node_modules
+    - .meteor/local/build
+    - .meteor/local/bundler-cache
+    - .meteor/local/isopacks
+    - .meteor/local/plugin-cache
+
+variables:
+  NODE_ENV: production
+  METEOR_SETTINGS_FILE: settings.json
+  METEOR_SESSION_FILE: meteor_session_file.json
+  REVIEW_TARGET: ${CI_PROJECT_NAME}-${CI_BUILD_REF_SLUG}.meteorapp.com
+
+.meteor: &meteor
+  before_script:
+    # Decode and print galaxy token
+    - echo $METEOR_TOKEN | base64 --decode > $METEOR_SESSION_FILE
+
+    # Install meteor
+    - curl https://install.meteor.com/ | sh
+
+    # Install dependencies
+    - yarn
+
+jest:
+  stage: test
+  script:
+    # - yarn
+    # - yarn test
+    - echo 'No tests yet everyone... lets fix it soon'
+
+start_review:
+  <<: *meteor
+  stage: review
+  script:
+    # Decode and print demo settings
+    - echo $REVIEW_METEOR_SETTINGS | base64 --decode > $METEOR_SETTINGS_FILE
+
+    # Edit settings file to reference generated review url for this build
+    - yarn global add json
+    - json -I -f $METEOR_SETTINGS_FILE -e "this['galaxy.meteor.com'].env.ROOT_URL='https://$(echo $REVIEW_TARGET)'"
+
+    # Print result to build outout for easy debugging
+    - grep ROOT_URL $METEOR_SETTINGS_FILE
+
+    # Deploy review app
+    - meteor deploy $REVIEW_TARGET --settings $METEOR_SETTINGS_FILE --allow-superuser
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    url: https://$REVIEW_TARGET
+    on_stop: stop_review
+  only:
+    - branches
+  except:
+    - master
+    - develop
+
+stop_review:
+  <<: *meteor
+  when: manual
+  stage: review
+  script:
+    # Delete review app
+    - meteor deploy $REVIEW_TARGET --delete --allow-superuser
+  variables:
+    GIT_STRATEGY: none
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    action: stop
+  only:
+    - branches
+  except:
+    - master
+    - develop
+
+staging:
+  <<: *meteor
+  stage: deploy
+  script:
+    # Decode and print demo settings
+    - echo $REVIEW_METEOR_SETTINGS | base64 --decode > $METEOR_SETTINGS_FILE
+
+    # Deploy production app
+    - meteor deploy $STAGING_TARGET --settings $METEOR_SETTINGS_FILE --allow-superuser
+  environment:
+    name: staging
+    url: https://$STAGING_TARGET
+  only:
+    - master
+
+production:
+  <<: *meteor
+  stage: deploy
+  script:
+    # Decode and print prodcuction settings
+    - echo $PRODUCTION_METEOR_SETTINGS | base64 --decode > $METEOR_SETTINGS_FILE
+
+    # Deploy production app
+    - meteor deploy $PRODUCTION_TARGET --settings $METEOR_SETTINGS_FILE --allow-superuser
+  environment:
+    name: production
+    url: https://$PRODUCTION_TARGET
+  only:
+    - master

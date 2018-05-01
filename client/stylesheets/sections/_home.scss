@@ -1,0 +1,163 @@
+.home {
+  &--block {
+    margin-bottom: 30px;
+    max-width: 1240px;
+    margin: 0 auto;
+    position: relative;
+    @include respond-at-and-above($break-medium) {
+      display: flex;
+      overflow: hidden;
+      align-items: center;
+      align-content: center;
+      min-height: 600px;
+      margin-bottom: 50px;
+      &.block-three {
+        min-height: 500px;
+      }
+      &.block-one {
+        min-height: 100%;
+      }
+      h2, h4, p, a {
+        opacity: 0;
+        @include transform(translateY(100px));
+      }
+      h2 {
+        @include transition(all .25s);
+      }
+      p {
+        @include transition(all .45s);
+      }
+      h4 {
+        @include transition(all .65s);
+      }
+      a {
+        @include transition(all .65s);
+      }
+      &.visible {
+        h2, p, a, h4 {
+          opacity: 1;
+          @include transform(translateY(0));
+        }
+      }
+      &:first-child {
+        h2, p, a, h4 {
+          opacity: 1;
+          @include transform(translateY(0));
+        }
+      }
+    }
+  }
+  &--copy {
+    padding: 20px 30px;
+    max-width: 470px;
+    p {
+      margin: 20px 0;
+
+    }
+    @include respond-at-and-above($break-medium) {
+      &.copy-two {
+        left: 43%;
+        max-width: 430px;
+        position: relative;
+      }
+      &.copy-three {
+        margin-top: -20%;
+        left: 10%;
+        position: relative;
+      }
+      &.copy-four {
+        margin-top: -14%;
+        left: 43%;
+        position: relative;
+        max-width: 490px;
+      }
+    }
+    @include respond-at-and-above($break-large) {
+      &.copy-two {
+        left: 53%;
+        max-width: 470px;
+      }
+      &.copy-four {
+        left: 46%;
+        max-width: 520px;
+      }
+    }
+  }
+
+  h4 {
+    margin: 20px 0;
+  }
+
+  &--quote {
+    font-size: 1.5rem;
+    position: relative;
+    &:before {
+      @include open;
+      font-weight: 700;
+      font-size: 2.6rem;
+      font-style: italic;
+      content: open-quote;
+      position: absolute;
+      left: -32px;
+      top: -4px;
+      color: $red;
+    }
+    &:after {
+      @include open;
+      font-weight: 700;
+      font-size: 2.6rem;
+      font-style: italic;
+      content: close-quote;
+      position: absolute;
+      color: $red;
+    }
+    @include respond-at-and-above($break-medium) {
+      font-size: 2.2rem;
+    }
+
+  }
+
+  &--illustration {
+    background-size:cover;
+    background-repeat: no-repeat;
+    img {
+      opacity: 0;
+    }
+    @include respond-at-and-above($break-medium) {
+      max-width: 50%;
+      &.illustration-two {
+        position: absolute;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-size: contain;
+        background-repeat:no-repeat;
+      }
+      &.illustration-three {
+        position: absolute;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top right;
+      }
+      &.illustration-four {
+        position: absolute;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top center;
+      }
+    }
+
+  }
+}

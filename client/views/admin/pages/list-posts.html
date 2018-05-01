@@ -1,0 +1,41 @@
+<template name="listPosts">
+  <!-- 
+
+    These pages need to be rebuilt in react before they are used again
+    This functionality is no longer present in the application
+    -->
+    <section class="tutor-listing content">
+      <section class="sidebar">
+        <div class="search-panel">
+          <ul>
+            {{#if addPage}}
+              <li><a href="{{pathFor 'newPage'}}">Add a {{name}}</a></li>
+            {{else}}
+              <li><a href="{{pathFor 'newPost'}}">Add a {{name}}</a></li>
+            {{/if}}
+          </ul>
+        </div>
+      </section>
+
+      <section class="list">
+        <ul class="cms-pages">
+          {{#if hasPosts}}
+            {{#each posts}}
+            <li>
+              <div class="page-title">
+                <i class="fa fa-file-o"></i> <a href="{{pathFor route='editPost' id=_id}}">{{title}}</a>
+                <span class="delete-item js-delete"><i class="fa fa-times"></i></span>
+              </div>
+            </li>
+            {{/each}}
+          {{else}}
+            {{#if addPage}}
+              <p class="alert alert-warning">Currently no {{nameL}} please <a href="{{pathFor 'newPage'}}">create one</a> to being</p>
+            {{else}}
+              <p class="alert alert-warning">Currently no {{nameL}} please <a href="{{pathFor 'newPost'}}">create one</a> to being</p>
+            {{/if}}
+          {{/if}}
+        </ul>
+      </section>
+    </section>
+</template>

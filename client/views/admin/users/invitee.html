@@ -1,0 +1,20 @@
+<template name="invitee">
+  <section class="content">
+    <div class="tutor--approval">
+      <h2>Application From: {{profile.firstName}} {{profile.lastName}}</h2>
+      <div class="tutor--approval-info">
+        <ul>
+          <li>Email: <a href="mailto:{{email}}">{{email}}</a></li>
+          <li>Phone: {{profile.phoneNumber}}</li>
+          <li>Resume: <a href="{{profile.resume}}">Link</a></li>
+          <li>Specialities: {{profile.specialities}}</li>
+          <li>Address: {{address.address}} {{address.addressExt}}, {{address.city}}, {{address.state}} {{address.postal}}</li>
+          <li>can use video: {{profile.videoShare}}</li>
+        </ul>
+        <h3>Video Interview</h3>
+
+        <video id='tutorapproval' data-uuid='{{profile.videoId}}'></video>
+      </div>
+    </div>
+  </section>
+</template>

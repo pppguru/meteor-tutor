@@ -1,0 +1,18 @@
+<template name="generalSettings">
+  <form for="generalSettings" id="generalSettings">
+     <div class="form-group">
+      <label for="metaTitle">Meta Title
+        <input type="text" name="metaTitle" id="metaTitle" placeholder="Meta Title" value="{{metaName}}">
+      </label>
+      <label for="metaDescription">Meta Description
+        <textarea id="metaDescription" name="metaDescription" placeholder="Meta Description">{{metaDescription}}</textarea>
+      </label>
+      <label for="metaKeywords">Meta Keywords
+        <textarea id="metaKeywords" name="metaKeywords" placeholder="Meta Keywords">{{metaKeywords}}</textarea>
+      </label>
+    </div>
+     <div class="form-group">
+       <input type="submit" class="btn" value="Save Settings" />
+     </div>
+  </form>
+</template>

@@ -1,0 +1,198 @@
+.user-navigation {
+  @include respond-at-and-above($break-medium) {
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    // flex-grow: 1;
+    // flex-shrink: 1;
+    // flex-basis: auto;
+    height: 70px;
+    top: 0;
+  }
+  li {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin-right: 16px;
+    @include respond-at-and-above($break-medium) {
+      display: inline-block;
+      &.name {
+        text-align: right;
+      }
+
+      // position: absolute;
+      // right: 144px;
+      // z-index: 2;
+      // width: 40px;
+      // top: 44px;
+      a.logout--link {
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: $red;
+        line-height: .7;
+        &:hover {
+          color: black;
+        }
+        @include respond-at-and-above($break-medium) {
+          position: absolute;
+          right: 60px;
+          bottom: 6px;
+        }
+      }
+      a {
+        font-size: 1rem;
+        color: black;
+        // line-height: 3.7;
+        // margin: 0 38px;
+      }
+    }
+      &.notifications {
+        position: relative;
+        width: 50px;
+        display: block;
+        a {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          margin-left:0px;
+          width:180px;
+        }
+        span {
+          display: block;
+        }
+        &:hover{
+          .notifications--tooltip{
+            display: none;
+            @include respond-at-and-above($break-medium) {
+              display: block;
+            }
+          }
+        }
+    }
+  }
+
+  .notifications--tooltip {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: -120px;
+    width: 350px;
+    background: white;
+    padding: 30px;
+    border: 1px solid #eeeeee;
+    z-index: 1001;
+    border-radius: 5px;
+    @include respond-at-and-above($break-medium) {
+      display: none;
+    }
+
+    .dashboard-card{
+      width:100%;
+      padding:0px;
+    }
+
+    a{
+      margin-left:0px;
+      display: block!important;
+      text-align: left;
+      font-size:0.8em;
+      font-weight:500;
+      max-height: 60px;
+    }
+    p {
+      display: none;
+    }
+    h2{
+      font-size: 1rem;
+    }
+    .icon-item {
+      h4 {
+        font-size: .8rem;
+      }
+      &-icon {
+        width: 50px;
+        height: 45px;
+      }
+    }
+    &:before {
+      content: '';
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid $border;
+      position: absolute;
+      top: -10px;
+      left: 131px;
+    }
+    &:after {
+      content: '';
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid white;
+      position: absolute;
+      top: -9px;
+      left: 131px;
+    }
+
+  }
+
+  .avatar--name {
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    .avatar--link {
+      margin: 0;
+      line-height: 1px;
+      width: 50px;
+      margin-left: 10px;
+      height: 50px;
+      background-size: cover;
+      border-radius: 50%;
+      padding: 0;
+    }
+    @include respond-at-and-above($break-medium) {
+      flex-direction: row-reverse;
+      .user--link {
+        padding-bottom: 10px;
+      }
+    }
+  }
+  .sessions {
+    position: relative;
+  }
+  .notification-bubble {
+    background: $blue;
+    position: absolute;
+    z-index: 4;
+    min-width: 22px;
+    height: 22px;
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    margin-left: -10px;
+    margin-top: -4px;
+    @include respond-at-and-above($break-medium) {
+      position: relative;
+      left:8px;
+    }
+
+    span {
+      font-size: 11px;
+      font-weight: 700;
+      position: relative;
+      // top: -9px;
+    }
+  }
+  .notification-caption{
+    display: block!important;
+    margin-right:20px;
+    @include respond-at-and-above($break-medium) {
+      display: none!important;
+    }
+  }
+}

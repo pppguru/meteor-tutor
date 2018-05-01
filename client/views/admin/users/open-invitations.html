@@ -1,0 +1,18 @@
+<template name="openInvitations">
+  {{#if hasInvites}}
+    <div class="tutor--invites">
+      <ul>
+        {{#each invites}}
+        <li>
+          <span># {{inviteNumber}}</span>
+          <h4><a href="{{pathFor route='invitee' id=_id}}">{{email}}</a></h4>
+          <span class="date">{{epochToString requested}}</span>
+          <button type="button" class="btn btn-success send-invite">Send Invite</button>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{else}}
+    <p class="alert alert-warning">No invites have been requested yet.</p>
+  {{/if}}
+</template>

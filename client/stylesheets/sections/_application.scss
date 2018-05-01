@@ -1,0 +1,310 @@
+.application {
+  position: relative;
+  padding-top: 54px;
+  overflow: hidden;
+
+  /* &--steps {
+  padding-top: 24px;
+  padding-bottom: 12px;
+  background: $red;
+  text-align: center;
+  color: white;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  top: 64px;
+  } */
+
+
+   .steps {
+    padding-top: 24px;
+    padding-bottom: 12px;
+    background: $red;
+    text-align: center;
+    color: white;
+    position: fixed;
+    z-index: 10;
+    width: 25%;
+    top: 64px;
+    left: 0px;
+  }
+
+    .stepsGrey {
+     padding-top: 24px;
+     padding-bottom: 12px;
+     background:#f1f1f1;
+     text-align: center;
+     color: transparent;
+     position: fixed;
+     z-index: 10;
+     width: 75%;
+     top: 64px;
+     left: 25%;
+   }
+
+    .steps2 {
+     padding-top: 24px;
+     padding-bottom: 12px;
+     background: $red;
+     text-align: center;
+     color: white;
+     position: fixed;
+     z-index: 10;
+     width: 50%;
+     top: 64px;
+     left: 0px;
+   }
+
+   .stepsGrey2 {
+    padding-top: 24px;
+    padding-bottom: 12px;
+    background:#f1f1f1;
+    text-align: center;
+    color: transparent;
+    position: fixed;
+    z-index: 10;
+    width: 50%;
+    top: 64px;
+    left: 50%;
+  }
+
+   .steps3 {
+    padding-top: 24px;
+    padding-bottom: 12px;
+    background: $red;
+    text-align: center;
+    color: white;
+    position: fixed;
+    z-index: 10;
+    width: 75%;
+    top: 64px;
+    left: 0px;
+  }
+
+  .stepsGrey3 {
+   padding-top: 24px;
+   padding-bottom: 12px;
+   background:#f1f1f1;
+   text-align: center;
+   color: transparent;
+   position: fixed;
+   z-index: 10;
+   width: 25%;
+   top: 64px;
+   left: 75%;
+  }
+
+  .steps4 {
+   padding-top: 24px;
+   padding-bottom: 12px;
+   background: $red;
+   text-align: center;
+   color: white;
+   position: fixed;
+   z-index: 10;
+   width: 100%;
+   top: 64px;
+   left: 0px;
+ }
+
+
+
+  .stepThree {
+    p {
+      position: relative;
+      &:before {
+        z-index: -1;
+        background: radial-gradient(ellipse at center,#ffffff 0,rgba(255,255,255,.91) 50%,rgba(255,255,255,.1) 65%,rgba(255,255,255,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0efeb', endColorstr='#00e5e5e5', GradientType=1);
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  p {
+    font-size: .9rem;
+    padding: 10px 0;
+  }
+
+  &--illustration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+
+    img {
+      opacity: 0;
+      display: none;
+    }
+
+
+    @include respond-at-and-above($break-medium) {
+      width:65%;
+      right: 0;
+      height: 100%;
+      // background-size: 100% 100%;
+      // position: relative;
+    }
+
+    @include respond-at-and-above($break-large) {
+      margin: 100px 0;
+      width: 50%;
+      background-size: 100%;
+      background-position: top center;
+    }
+  }
+
+  &--step-one {
+    padding-top: 200px;
+    @include respond-at-and-above($break-medium) {
+      padding-top: 20px;
+    }
+  }
+
+  .stepFour {
+    position: relative;
+    &:before {
+      z-index: -1;
+      background: radial-gradient(ellipse at center,#ffffff 0,rgba(255,255,255,.91) 50%,rgba(255,255,255,.1) 65%,rgba(255,255,255,0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0efeb', endColorstr='#00e5e5e5', GradientType=1);
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+    button {
+      margin-top: 20px;
+    }
+    @include respond-at-and-above($break-large) {
+      padding-bottom: 120px;
+      label.error {
+        position: absolute;
+        top: 22px !important;
+      }
+    }
+    span {
+      // position: absolute;
+      font-weight: 600;
+      top: 2px;
+      left: 18px;
+      color: black;
+    }
+    .step--four-step {
+      position: relative;
+      padding-bottom: 10px;
+    }
+  }
+
+  .forms {
+    padding: 20px;
+    max-width: 1200px;
+    h2 {
+      margin-top: 20px;
+
+      &.application--break {
+        margin-top: 60px;
+      }
+    }
+
+    &--inputs {
+      input {
+        padding: 8px 12px;
+      }
+      @include respond-at-and-above($break-medium) {
+        position: relative;
+        input {
+          margin-bottom: 14px;
+        }
+        label {
+          &.error {
+            top: -10px;
+          }
+        }
+      }
+    }
+
+    @include respond-at-and-above($break-medium) {
+      display: flex;
+      align-items: center;
+      padding-left: 40px;
+      justify-content: flex-start;
+      &--inputs {
+        margin-top: 100px;
+      }
+    }
+  }
+
+  .video-hidden {
+    opacity: 0;
+    position: absolute;
+  }
+
+  .disabled {
+    opacity: 0;
+    cursor: no-drop;
+    display: none;
+  }
+
+  .signature-pad {
+    margin-bottom: 20px;
+    canvas {
+      width: 100%;
+      display: block;
+      margin-bottom: 6px;
+      margin-top: 4px;
+      border: 1px solid $border;
+    }
+  }
+
+  .signature {
+    position: absolute;
+    z-index: -10;
+    height: 0;
+    width: 0;
+    border: 0;
+    opacity: 0;
+  }
+
+  &--thank-you {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 600px;
+    h1 {
+      margin-bottom: 18px;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+    a {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.application .forms--inputs label.error.tutorapplication_video_uuid-error {
+  top: 2px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+    iframe {
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+}

@@ -1,0 +1,140 @@
+.flagged-true {
+	border: 2px solid red;
+}
+
+.message-block {
+	text-align: center;
+}
+.message-btn {
+	@include transition(color .25s);
+	cursor: pointer;
+	&:hover {
+		color: black;
+		@include transition(color .25s);
+	}
+}
+
+.tutor {
+	&--invites {
+		padding: 0 20px;
+		li, ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		span, h4, button {
+			display: inline-block;
+		}
+		li {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		h4 {
+			width: 50%;
+		}
+	}
+	&--approval {
+		padding: 30px;
+		ul {
+			margin: 0 18px;
+			padding: 20px 0;
+		}
+		li {
+			padding: 4px 0;
+		}
+	}
+}
+
+
+$unchecked-star: '\2606';
+$unchecked-color: $red;
+$checked-star: '\2605';
+$checked-color: $red;
+
+.star-cb-group {
+  /* remove inline-block whitespace */
+  font-size: 0;
+  * {
+    font-size: 1rem;
+  }
+  /* flip the order so we can use the + and ~ combinators */
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  & > input {
+    // display: none;
+		opacity: 0;
+		position: absolute;
+    & + label {
+      /* only enough room for the star */
+      display: inline-block;
+      overflow: hidden;
+      text-indent: 9999px;
+      width: 1em;
+      white-space: nowrap;
+      cursor: pointer;
+      &:before {
+        display: inline-block;
+        text-indent: -9999px;
+        content: $unchecked-star;
+        color: $unchecked-color;
+      }
+    }
+    &:checked ~ label:before,
+      & + label:hover ~ label:before,
+      & + label:hover:before {
+      content: $checked-star;
+      color: #e52;
+      text-shadow: 0 0 1px #333;
+    }
+  }
+
+  /* the hidden clearer */
+  & > .star-cb-clear + label {
+    text-indent: -9999px;
+    width: .5em;
+    margin-left: -.5em;
+  }
+  & > .star-cb-clear + label:before {
+    width: .5em;
+  }
+
+  &:hover > input + label:before {
+    content: $unchecked-star;
+    color: $unchecked-color;
+    text-shadow: none;
+  }
+  &:hover > input + label:hover ~ label:before,
+  &:hover > input + label:hover:before {
+    content: $checked-star;
+    color: $checked-color;
+    text-shadow: 0 0 1px #333;
+  }
+}
+
+fieldset {
+  border: 0;
+  width: 100%;
+  border-radius: 1px;
+  padding: 0px 0;
+  margin: 0 auto;
+}
+#log {
+  margin: 1em auto;
+  width: 5em;
+  text-align: center;
+  background: transparent;
+}
+
+.tutor--review-form-stars {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+.tutor--review-star-single {
+	width: 33%;
+	padding: 10px 0;
+	h4 {
+		font-weight: 400;
+	}
+}

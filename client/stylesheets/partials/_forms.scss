@@ -1,0 +1,383 @@
+// Login
+
+.forms {
+	margin: 0px auto;
+
+	&-steps {
+		width: 100%;
+		margin-bottom: 14px;
+		ul, li {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			li {
+				border: 2px solid white;
+				list-style-type: none;
+				padding: 8px 10px;
+				border-radius: 4px;
+				width: 30%;
+				font-size: .9rem;
+				opacity: .5;
+				&.active {
+					opacity: 1;
+					background: white;
+					color: #333;
+				}
+			}
+		}
+	}
+
+	&--single {
+		width: 48%;
+		position: relative;
+	}
+
+	&--triple {
+		display: flex;
+		justify-content: space-around;
+		&-b {
+			@include respond-at-and-above($break-medium) {
+				width: 47.5%;
+				margin-right: 2%;
+			}
+		}
+		&-s {
+			@include respond-at-and-above($break-medium) {
+				width: 23%;
+			}
+		}
+	}
+
+	&--double {
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+
+		&-s {
+			width: 48%;
+		}
+		.terms--agree {
+			width: 94%;
+		}
+
+
+		.forms--single {
+			label.error {
+				top: auto !important;
+				bottom: 10px;
+				left: 8px;
+			}
+		}
+	}
+
+	input {
+		opacity: 1;
+		background: none;
+		border: 1px solid $border;
+		width: 100%;
+		margin-bottom: 10px;
+		outline: none;
+		padding: 14px 12px;
+		background: rgba(255,255,255,.9);
+		border-radius: 0;
+		box-shadow: 0 0;
+		&[type="checkbox"] {
+			width: auto;
+			margin-right: 8px;
+		}
+	}
+	.disabled {
+		cursor: default;
+		opacity: .5;
+	}
+	.step-1 {
+		&.complete {
+			display: none;
+		}
+	}
+	.step-2 {
+		display: none;
+		text-align: left;
+		&.visible {
+			display: block;
+		}
+		&.complete {
+			display: none;
+		}
+		p {
+			margin-bottom: 20px;
+		}
+		.video-hidden {
+			opacity: 0;
+			position: absolute;
+		}
+		label {
+			display: block !important;
+			&.error {
+				font-size: .9rem;
+				color: rgb(252, 71, 71);
+				margin: 8px 0;
+			}
+		}
+	}
+	.step-3 {
+		text-align: left;
+		display: none;
+		&.visible {
+			display: block;
+		}
+		.resume {
+			opacity: 0;
+			position: absolute;
+		}
+		label {
+			display: block !important;
+			&.error {
+				font-size: .9rem;
+				color: rgb(252, 71, 71);
+				margin: 8px 0;
+			}
+		}
+		.btn {
+			margin-top: 40px;
+		}
+	}
+}
+
+.form {
+	&-nested-terms {
+		text-align: left;
+		margin-top: 20px;
+		position: relative;
+		label {
+			position: absolute;
+			bottom: -20px;
+
+		}
+		h4 {
+			margin: 10px 0;
+			font-size: 1.2rem;
+		}
+		&-inner {
+			padding: 10px;
+			font-size: .9rem;
+			height: 230px;
+			overflow-y: scroll;
+			background: white;
+			margin-bottom: 14px;
+		}
+		ul {
+			margin: 0 10px;
+			padding: 0;
+		}
+		li {
+			list-style-type: none;
+			margin: 0;
+			padding: 8px 0;
+		}
+	}
+	&-video-error {
+		color: red;
+		margin: 8px 0;
+		font-size: .8rem;
+	}
+	&-group {
+		display: block;
+		width: 100%;
+		&.address {
+			display: flex;
+			justify-content: space-between;
+			input {
+				width: 20%;
+			}
+			.address {
+				width: 58%;
+			}
+			.postal {
+				width: 41%;
+			}
+		}
+	}
+}
+
+
+form {
+	textarea {
+		width: 100%;
+		height: 100px;
+		outline: none;
+		padding: 12px;
+		max-width: 100%;
+		font-size: .9rem;
+		border: 1px solid $border;
+		margin-bottom: 10px;
+		resize: none;
+	}
+	input {
+		outline: none;
+	}
+}
+
+.forms {
+	position: relative;
+
+	&.signup {
+		h2 {
+			padding-bottom: 0;
+			margin-bottom: 0;
+		}
+		h4 {
+			padding-bottom: 20px;
+		}
+	}
+
+	h2 {
+		position: relative;
+		top: -10px;
+		@include respond-at-and-above($break-medium) {
+			padding-bottom: 20px;
+		}
+	}
+
+	a {
+		font-weight: 700;
+		font-size: .9rem;
+	}
+
+	label {
+		color: black;
+		letter-spacing: 0;
+		display: block;
+		input {
+			margin-top: 6px;
+		}
+
+		textarea {
+			margin-top: 6px;
+		}
+
+		&.error {
+			font-weight: 400;
+			font-size: .7rem;
+			position: relative;
+			top: -4px;
+			color: $error;
+			@include respond-at-and-above($break-medium) {
+				position: relative;
+				top: -20px;
+			}
+		}
+	}
+
+	input {
+		display: block;
+		width: 100%;
+		@include respond-at-and-above($break-medium) {
+			margin-bottom: 30px;
+		}
+
+		&[type="checkbox"] {
+			width: auto;
+			margin-right: 8px;
+			display: inline-block;
+		}
+	}
+
+	span {
+		font-size: .9rem;
+	}
+
+	&--wrapper {
+		padding: 40px;
+	}
+
+	&--illustration {
+		background-size: cover;
+		max-width: 160px;
+		background-repeat: no-repeat;
+		margin: 0 auto;
+		img {
+			opacity: 0;
+		}
+	}
+
+	&--input-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.links {
+			text-align: right;
+		}
+	}
+
+	@include respond-at-and-above($break-medium) {
+		&--wrapper {
+			padding: 0 20px;
+			display: flex;
+			align-items: center;
+		}
+		&--illustration {
+			width: 50%;
+			max-width: 100%;
+			background-size: contain;
+			background-position: center center;
+			margin: 0;
+			margin-top: 40px;
+			margin-bottom: 60px;
+		}
+
+		&--inputs {
+			width: 60%;
+			max-width: 500px;
+			padding: 50px 0;
+
+			.no-account {
+				display: block;
+				margin-top: 10px;
+			}
+		}
+
+	}
+	.hint{
+		font-size: .8rem;
+		color: $grey;
+	}
+}
+
+.algolia-autocomplete {
+  width: 100%;
+}
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+  width: 100%;
+	margin-bottom: 0px;
+}
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #999;
+  border-top: none;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: 8px 4px;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: $yellow;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+#terms-error{
+	position: absolute !important;
+	top: 24px !important;
+	left: 0;
+}

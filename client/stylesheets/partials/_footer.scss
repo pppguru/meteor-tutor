@@ -1,0 +1,115 @@
+footer {
+  background: $footer;
+  min-height: 200px;
+  padding: 80px 40px;
+  // margin-top: 60px;
+
+  svg {
+    fill: $red;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  @include respond-at-and-above($break-medium) {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    height: 345px;
+    z-index: 12;
+  }
+}
+
+.footer {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  &--policy {
+    display: flex;
+    max-width: 500px;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include respond-at-and-above($break-medium) {
+      max-width: 400px;
+    }
+
+    @include respond-at-and-above($break-large) {
+      max-width: 500px;
+    }
+    h4 {
+      a {
+        color: white;
+        font-weight: 700;
+        font-size: .9rem;
+        text-transform: uppercase;
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+    p {
+      font-size: .7rem;
+      opacity: .9;
+      font-weight: 700;
+      color: $lite-grey;
+      margin-top: 15px;
+    }
+  }
+  &--disclaimer {
+    width: 500px;
+  }
+
+  &--social {
+    margin-top: 40px;
+    text-align: center;
+    a {
+      &:hover {
+        color: $red;
+        border-color: $red;
+      }
+    }
+    p {
+      font-size: .7em;
+      margin-bottom:15px;
+
+    }
+
+  }
+  &--phone-number a{
+    color: #fff;
+    font-weight: 700;
+    font-size: 1em;
+
+    :hover {
+      color: $red;
+      border-color: transparent;
+    }
+
+  }
+  &--header {
+    color: #fff;
+    font-size: 30px;
+
+  }
+
+  &--reddot {
+    color: $red;
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  @include respond-at-and-above($break-medium) {
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+
+    &--social {
+      margin-top: 0;
+    }
+  }
+  .soc {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}

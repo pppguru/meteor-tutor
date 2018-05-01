@@ -1,0 +1,38 @@
+<template name="newPage">
+
+  <section class="tutors-listing content">
+    <h1>Pages <span id="visit"></span></h1>
+    <ul class="breadcrumbs">
+      <li><a href="{{pathFor 'pages'}}">Pages</a></li>
+      <li class="type">New</li>
+    </ul>
+
+    <div class="row edit-page">
+      <form id="page-editor" class="create-page">
+        <div class="large-12 columns main-block">
+          <label>Page Title
+          <input type="text" name="title" id="title" placeholder="Title" value="{{title}}">
+          </label>
+          <label class="js-page-slug">Page Slug (required will automatically remove spaces with dashes)
+          <input type="text" name="slug" id="slug" placeholder="Slug" value="{{slug}}">
+          </label>
+        </div>
+          {{> modularContentBuilder}}
+
+          <div class="large-12 main-block">
+            <label>Meta Title
+            <input type="text" name="metaTitle" id="metaTitle" placeholder="Meta Title" value="{{metaTitle}}">
+            </label>
+            <label>Meta Description
+            <input type="text" name="metaDescription" id="metaDescription" placeholder="Meta Description" value="{{metaDescription}}">
+            </label>
+          </div>
+
+            <ul class="button-group">
+              <li><input type="submit" class="button success" value="Create"></li>
+            </ul>
+
+        </form>
+      </div>
+  </section>
+</template>

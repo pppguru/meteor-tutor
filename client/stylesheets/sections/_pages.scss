@@ -1,0 +1,46 @@
+.terms-and-conditions{
+  max-width: 1045px;
+  margin: 0 auto;
+  padding: 30px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  line-height: 1.4;
+  color: #484848;
+  position: relative;
+  top: 50px;
+  &.cancellation{
+    text-align: center;
+    font-size: 22px;
+    padding-top: 100px;
+  }
+  &.use
+  {
+    ol
+    {
+      li {
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  ul li{
+    text-decoration: none;
+    font-weight: normal;
+    margin-bottom: 15px;
+  }
+
+  p, ol li {
+    margin-bottom: 15px;
+  }
+}
+
+
+.header--mobile-main {
+    &.terms
+    {
+      position: fixed !important;
+      margin-top: 4px !important;
+      z-index: 1001;
+    }
+}
+

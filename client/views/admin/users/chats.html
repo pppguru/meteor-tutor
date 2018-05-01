@@ -1,0 +1,16 @@
+<template name="adminChats">
+    <section class="inbox content">
+      <h1>All Chats</h1>
+      <div class="chats">
+        <ul class="inbox-messages">
+          {{#if hasChats}}
+            {{#each chats}}
+            <li>
+                <a href="{{pathFor route='adminChatView' id=_id}}">Chat between tutor: {{userName tutor_id}} and student: {{userName student_id}}</a>
+            </li>
+            {{/each}}
+          {{/if}}
+        </ul>
+      </div>
+    </section>
+</template>

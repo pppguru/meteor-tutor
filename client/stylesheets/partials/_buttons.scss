@@ -1,0 +1,113 @@
+@mixin button {
+  @include transition(all .25s);
+  cursor: pointer;
+  padding: .6em 1.4em;
+  color: white;
+  margin: 10px 0;
+  display: inline-block;
+  border: none;
+  outline: none;
+  background: white;
+  color: $red;
+  border: {
+    color: $red;
+    radius: 2px;
+    width: 1px;
+    style: solid;
+  }
+  &:hover {
+    @include transition(all .25s);
+    color:white;
+    background: rgb(253, 91, 96);
+  }
+
+}
+
+button,
+.button,
+.btn,
+a.btn {
+  @include button;
+
+  &--large {
+    border-radius: 20px;
+    font-size: .9rem;
+    font-weight: 600;
+    // margin-right: 20px;
+    &:hover {
+      svg {
+        fill: white;
+      }
+    }
+    svg {
+      @include transition(all .25s);
+      width: 16px;
+      height: 16px;
+      fill: $red;
+      position: relative;
+      top: 3px;
+      margin-left: 6px;
+    }
+  }
+
+  &--white {
+    border-color: white;
+    border-radius: 30px;
+    color: white;
+    background: transparent;
+    font-weight: 600;
+    &:hover {
+      background: white;
+      color: black;
+    }
+  }
+
+  &--red {
+    border-color: $red;
+    color: white;
+    background: $red;
+    &:hover {
+      background: white;
+      color: $red;
+    }
+  }
+
+  &.saving {
+    border-color: $yellow;
+    background: $yellow;
+    color: black;
+  }
+
+  &--xlarge {
+    border-radius: 30px;
+    padding: 1em 2.1em;
+    font-weight: 700;
+    font-size: .9rem;
+    white-space: nowrap;
+    @include respond-at-and-above($break-medium) {
+      padding: 1.2em 2.3em;
+    }
+  }
+
+  &--arrow {
+    padding-right: 2.2rem;
+    &:after {
+    	border-style: solid;
+    	border-width: 0.22em 0.22em 0 0;
+    	content: '';
+    	display: inline-block;
+    	height: 0.4em;
+    	left: 10px;
+    	position: relative;
+      top: 6px;
+    	transform: rotate(45deg);
+    	vertical-align: top;
+    	width: 0.45em;
+    }
+  }
+  &:disabled {
+    &:hover {
+      background: transparent;
+    }
+  }
+}

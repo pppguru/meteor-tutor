@@ -1,0 +1,95 @@
+@mixin open {
+	font-family: 'Open Sans';
+	font-weight: 300;
+	font-size: 15px;
+	letter-spacing: .02rem;
+	line-height: 1.4;
+}
+
+//// Media Query Mixins ////
+@mixin respond-below($width) {
+  @media (max-width: $width - 1) {
+    @content;
+  }
+}
+
+@mixin respond-between($start, $end) {
+  @media (min-width: $start) and (max-width: $end - 1) {
+    @content;
+  }
+}
+
+@mixin respond-at-and-above($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin vertical-respond-below($height) {
+  @media (max-height: $height - 1) {
+    @content;
+  }
+}
+
+@mixin vertical-respond-between($start, $end) {
+  @media (min-height: $start) and (max-height: $end - 1) {
+    @content;
+  }
+}
+
+@mixin vertical-respond-at-and-above($height) {
+  @media (min-height: $height) {
+    @content;
+  }
+}
+
+//// UI Mixins
+@mixin triangle($size: 6px, $color: $red, $direction: 'down') {
+
+  width: 0;
+  height: 0;
+
+  @if $direction == 'up' {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  } @else if $direction == 'down' {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+  } @else if $direction == 'right' {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  } @else {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+  }
+}
+
+// Megadraft Mixins
+@mixin semi-circle-ends($semi-height, $semi-width, $color, $left, $right) {
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: $semi-height;
+    width: $semi-width;
+    position: absolute;
+    background-color: $color;
+  }
+
+  &::before {
+    left: $left;
+    border-bottom-left-radius: 100px;
+    border-top-left-radius: 100px;
+  }
+
+  &::after {
+    top: 0;
+    right: $right;
+    border-bottom-right-radius: 100px;
+    border-top-right-radius: 100px;
+  }
+}

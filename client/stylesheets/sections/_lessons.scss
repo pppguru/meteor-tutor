@@ -1,0 +1,107 @@
+.dashboard--lesson {
+  background: $blue;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  margin-bottom: 20px;
+  &-true {
+    display: block;
+  }
+  &-false,
+  &-null {
+    display: none;
+  }
+  h3 {
+    color: white;
+  }
+  label {
+    color: white;
+  }
+  input {
+    background: transparent;
+    color: white;
+    border-color: white;
+  }
+  &-form {
+    @include respond-at-and-above($break-medium) {
+      padding-left: 64px;
+      &.edit {
+        padding-left: 0;
+      }
+    }
+  }
+  @include respond-at-and-above($break-medium) {
+    padding: 30px;
+  }
+  &.status--declined,
+  &.status--student_cancelled,
+  &.status--tutor_cancelled  {
+    background: $red;
+    p {
+      a {
+        color: $yellow;
+        &:hover{
+          color: black;
+
+        }
+      }
+    }
+  }
+
+  p a {
+    color: white;
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+.read-false {
+  font-weight: 700;
+}
+
+.lesson {
+  &--buttons {
+    margin-top: 20px;
+    a, button {
+      margin-right: 10px;
+      padding: 1em 1.8em;
+    }
+  }
+  &--edit {
+    margin-top: 14px;
+    padding-top: 14px;
+    // border-top: 1px solid $red;
+    &.cancel {
+      h3 {
+        color: $yellow;
+      }
+    }
+    p {
+      margin-bottom: 20px;
+    }
+  }
+  &--status {
+    border-radius: 5px;
+    font-size: .7rem;
+    display: inline-block;
+    margin-left: 10px;
+    color: white;
+    padding: 4px 8px;
+    &.default {
+      color: black;
+      font-weight: bold;
+      background: $yellow;
+    }
+    &.pending {
+      background: #ccc;
+    }
+    &.completed {
+      background: green;
+    }
+    &.cancelled,
+    &.declined {
+      background: $red;
+    }
+  }
+}

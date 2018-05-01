@@ -1,0 +1,155 @@
+.megadraft-editor {
+  .toolbar {
+    opacity: 0;
+    transition: opacity 0.25s ease !important;
+
+    &--open {
+      opacity: 1;
+    }
+
+    &__arrow {
+      border-color: $blue transparent transparent !important;
+    }
+
+    &__button {
+      height: 35px !important;
+    }
+
+    &__wrapper {
+      box-shadow: none !important;
+      background: none !important;
+      div {
+        &:nth-of-type(1) {
+          background-color: $blue;
+          border-radius: 100px;
+          padding: 0 25px;
+          input {
+            height: inherit;
+          }
+        }
+      }
+    }
+
+    &__list {
+      background-color: $blue !important;
+      box-shadow: none !important;
+      padding: 0 25px !important;
+      border-radius: 100px;
+    }
+
+    &__item {
+      color: #fff !important;
+    }
+
+    &__input {
+      height: 76px;
+    }
+
+    &__input::-webkit-input-placeholder {
+      color: #fff !important;
+    }
+
+    &__input:-moz-placeholder { /* Firefox 18- */
+      color: #fff !important;
+    }
+
+    &__input::-moz-placeholder {  /* Firefox 19+ */
+      color: #fff !important;
+    }
+
+    &__input:-ms-input-placeholder {
+      color: #fff !important;
+    }
+  }
+
+  .sidebar {
+    z-index: 1000;
+
+    &__sidemenu-wrapper {
+
+    }
+
+    .sidemenu {
+      > button {
+        &:first-of-type {
+          color: $red !important;
+        }
+      }
+
+      &__items {
+        align-items: center;
+        display: flex;
+        background-color: $blue;
+        flex-direction: row;
+        height: 55px !important;
+        position: absolute;
+        left: 45px;
+        top: -12px;
+        padding: 0 25px !important;
+        margin: 0 !important;
+        min-width: 225px;
+        opacity: 0;
+        transition: opacity 0.1s ease !important;
+
+        &--open {
+          opacity: 1;
+          border-radius: 100px;
+        }
+      }
+
+      &__item {
+        flex: 1;
+        height: auto !important;
+        display: flex;
+        align-content: center;
+        align-items: center;
+
+        button {
+          flex: 1;
+
+          &::before {
+            background-color: $blue !important;
+          }
+
+          svg {
+            #right-arrow,
+            #left-arrow {
+              path {
+                fill: #fff;
+              }
+            }
+          }
+        }
+      }
+
+      &__button {
+        &--open {
+          color: $red !important;
+        }
+
+        margin: 0 !important;
+
+        &::before {
+          background-color: #fff !important;
+        }
+
+        &__icon {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+
+  .DraftEditor {
+    &-root {
+
+    }
+    &-editorContainer {
+      > div {
+        &.public-DraftEditor-content {
+          min-height: 300px;
+        }
+      }
+    }
+  }
+}

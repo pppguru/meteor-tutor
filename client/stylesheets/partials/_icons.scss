@@ -1,0 +1,199 @@
+.icon-item {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  h4 {
+    font-size: 1.2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+    @include respond-at-and-above($break-medium) {
+      font-size: 1.7rem;
+    }
+  }
+  p {
+    font-size: 1rem;
+  }
+  &-copy {
+    width: 80%;
+    margin-left: 14px;
+  }
+  .icon--helpers {
+    width: 260px;
+    > div {
+
+      display: flex;
+      align-items: center;
+    }
+    svg {
+      fill: $blue;
+      width: 40px;
+      height: 40px;
+      max-height: 100%;
+      margin: 4px;
+    }
+    span {
+      margin-left: 4px;
+      color: $blue;
+      font-size: .7rem;
+      font-weight: 700;
+    }
+  }
+  &-icon {
+    background: $yellow;
+    padding: 12px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $yellow;
+    &.clear {
+      background: none;
+    }
+    &.blue, &.outline-blue {
+      font-size: 0.8em;
+      font-weight: bold;
+      border-color: $blue;
+    }
+    &.blue {
+      color: white;
+      background: $blue;
+    }
+    &.outline-blue {
+      color: $blue;
+    }
+  }
+  svg {
+    width: 20px;
+    display: inline-block;
+    max-height: 20px;
+  }
+  &.white {
+    align-items: flex-start;
+    h4 {
+      color: white;
+      margin-bottom: 20px;
+    }
+  }
+  &.inline-flex {
+
+    display: inline-flex;
+
+    .icon-item-copy {
+      width: auto;
+    }
+
+  }
+}
+
+a {
+  .icon-item p {
+    color: $text;
+  }
+}
+
+.icon-grid-view {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  padding: 13px;
+  border-radius: 50%;
+  &-toggle {
+    top: 0;
+    left: -1px;
+    cursor: pointer;
+    &, &:before {
+      position: relative;
+      width: 15px;
+      height: 6px;
+      border-width: 0 6px;
+      border-style: solid;
+      box-sizing: border-box;
+      border-color: $red;
+      display: inline-block;
+    }
+    &:before {
+      content: '';
+      top: -1px;
+      left: -6px;
+    }
+  }
+}
+
+.icon-list-view {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 13px;
+  &-toggle {
+    width: 100%;
+    height: 4px;
+    position: relative;
+    top: 1px;
+    background: $red;
+    &:after {
+      width: 100%;
+      height: 4px;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      background: $red;
+    }
+  }
+}
+.expand-subjects-button{
+  width: 30px;
+  height: 30px;
+  border: solid 1px #d9d9d9;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  fill: $red;
+}
+//highlighting when click
+.row .icon-list-view{
+  background-color: #FFFFFF;
+  border-radius: 50%;
+}
+.grid .icon-grid-view {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+}
+
+.checkmark {
+  display:inline-block;
+  width: 22px;
+  height:22px;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.checkmark_stem {
+  position: absolute;
+  width:3px;
+  height:9px;
+  background-color:#000;
+  left:11px;
+  top:6px;
+}
+
+.checkmark_kick {
+  position: absolute;
+  width:3px;
+  height:3px;
+  background-color:#000;
+  left:8px;
+  top:12px;
+}

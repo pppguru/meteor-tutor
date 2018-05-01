@@ -1,0 +1,43 @@
+section {
+  &.user-post-filter-wrapper {
+    background-color: $red;
+
+    > div {
+      display: flex;
+      flex-direction: center;
+      align-content: center;
+      align-items: center;
+
+      > ul {
+        display: flex;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+
+        li {
+          margin: 0 5px;
+
+          button {
+            color: white;
+            font-weight: 600;
+            border-radius: 18px;
+            font-size: 0.9rem;
+            border: 2px solid transparent;
+            background: none;
+
+            &.active {
+              background: #f8eb76;
+              color: black;
+              border: 2px solid #f8eb76;
+            }
+
+            &:hover {
+              border-color: $yellow;
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+  }
+}

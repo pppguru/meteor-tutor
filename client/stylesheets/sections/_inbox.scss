@@ -1,0 +1,61 @@
+.inbox {
+
+  &--wrapper {
+    padding: 20px;
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+
+  &--empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    text-align: center;
+    flex-wrap: wrap;
+
+    p {
+      margin: 10px 0;
+      padding: 8px 0;
+    }
+
+    .icon-item-icon {
+      width: 80px;
+      height: 80px;
+    }
+
+    .icon-item {
+      justify-content: center;
+      svg {
+        width: 30px;
+        max-height: 30px;
+      }
+    }
+  }
+
+
+  .dashboard--messages-single {
+    margin: 10px;
+    padding: 10px;
+    border-bottom: 1px solid $border;
+    &-avatar {
+      width: 50px;
+      height: 50px;
+      @include respond-at-and-above($break-medium) {
+        width: 70px;
+        height: 70px;
+      }
+    }
+    @include respond-at-and-above($break-medium) {
+      padding: 20px 10px;
+      margin: 20px 0;
+    }
+  }
+
+  .find-tutor {
+    padding-top: 20px;
+    display: inline-block;
+    margin: auto;
+    font-size: 1.3em;
+  }
+}

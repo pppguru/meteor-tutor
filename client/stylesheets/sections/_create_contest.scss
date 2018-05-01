@@ -1,0 +1,82 @@
+section {
+  &.create-contest-container {
+    > section {
+      &#create-contest-header {
+        background-color: $red;
+
+        > div {
+          display: flex;
+          flex-direction: center;
+          align-content: center;
+          align-items: center;
+
+          > ul {
+            display: flex;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+
+            li {
+              margin: 0 5px;
+
+              button {
+                color: white;
+                font-weight: 600;
+                border-radius: 18px;
+                font-size: 0.9rem;
+                border: 2px solid #fff;
+                background: none;
+
+                &.active {
+                  background: #f8eb76;
+                  color: black;
+                  border: 2px solid #f8eb76;
+                }
+
+                &:hover {
+                  border-color: $yellow;
+                  background: #f8eb76;
+                  color: #000;
+                }
+              }
+            }
+          }
+        }
+      }
+      &#create-contest-body {
+        display: flex;
+        padding: 0 100px;
+        margin: 0 auto;
+
+        h3 {
+
+        }
+
+        form {
+          div {
+            &.form-group {
+              label {
+
+              }
+              input {
+
+              }
+            }
+            &.form-section {
+              div  {
+                &.form-group {
+                  label {
+
+                  }
+                  input {
+
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

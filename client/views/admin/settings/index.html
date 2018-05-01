@@ -1,0 +1,18 @@
+<template name="siteSettings">
+    <section class="content">
+      <div class="nav-container">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active js-tab"><a href="" role="tab" data-toggle="site-settings">Site Settings</a></li>
+          <li role="presentation" class="js-tab"><a href="" role="tab" data-toggle="menu-manager">Menu Manager</a></li>
+        </ul>
+      </div>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="site-settings">
+          {{> generalSettings}}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="menu-manager">
+          {{> menuManager}}
+        </div>
+      </div>
+    </section>
+</template>

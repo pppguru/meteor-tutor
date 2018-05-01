@@ -1,0 +1,40 @@
+<template name="closedInvitations">
+  {{#if hasInvites}}
+  <table class="table">
+    <thead>
+      <tr>
+        <th width="5%"></th>
+        <th width="20%">Email Address</th>
+        <th width="20%">name</th>
+        <th width="20%" class="text-center">Date Invited</th>
+        <th width="15%" class="text-center">Invite Token</th>
+        <th width="15%" class="text-center">Video Approved</th>
+        <th width="20%" class="text-center">Account Created?</th>
+        <th width="20%" class="text-center">Promo Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each invites}}
+      <tr>
+        <td>#{{inviteNumber}}</td>
+        <td class="vertical-align"><a href="{{pathFor route='invitee' id=_id}}">{{email}}</a></td>
+        <td class="text-center vertical-align">{{profile.firstName}} {{profile.lastName}}</td>
+        <td class="text-center vertical-align">{{epochToString dateInvited}}</td>
+        <td class="text-center vertical-align">{{#if token}}{{token}}{{else}}<label class="label label-success">Already Used</label>{{/if}}</td>
+        <td class="text-center vertical-align">{{profile.videoShare}}</td>
+        <td class="text-center vertical-align">
+          {{#if accountCreated}}
+            Yes
+          {{else}}
+            No
+          {{/if}}
+        </td>
+        <td>{{promoToken}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{else}}
+    <p class="alert alert-warning">You haven't sent any invites yet.</p>
+  {{/if}}
+</template>
